@@ -329,8 +329,20 @@
 
 
 
-
-
+<button id="toggleTheme" class="btn btn-secondary position-fixed top-0 end-0 m-3">
+  Сменить тему
+</button>
+    </body>
+    <script>
+      const toggleButton = document.getElementById("toggleTheme");
+      const htmlElement = document.documentElement;
+    
+      toggleButton.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-bs-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        htmlElement.setAttribute("data-bs-theme", newTheme);
+      });
+    </script>
 
 
 
