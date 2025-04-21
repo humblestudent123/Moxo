@@ -12,7 +12,6 @@
 
     <script src="../assets/js/color-modes.js"></script>
 
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="apple-touch-icon" href="../assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="../assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -182,7 +181,7 @@
 
 
 
-
+      
     <!-- замена фото логотипа -->
     <img class="mb-4" src="../registration/images/moxo1.png" alt="" width="110" height="110">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -213,7 +212,48 @@
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <button id="btn" class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <script>
+      document.getElementById("btn").addEventListener("click", function() {
+        window.location.href = "nextpage.html"; // Укажи свой путь к странице
+      });
+    </script>
+
+
+
+
+
+
+
+
+    <!-- <form id="loginForm">
+      <input type="email" class="form-control" placeholder="Email address" required>
+      <input type="password" class="form-control" placeholder="Password" required>
+      <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    </form> --> 
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Останавливаем стандартную отправку формы
+        // Тут можно добавить проверку логина/пароля, если нужно
+        window.location.href = 'home.html'; // Переход на нужную страницу
+      });
+    </script>
+
+
+
+
     <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2025</p>
   </form>
 </main>
@@ -272,6 +312,8 @@
     });
   })();
 </script>
+
+
 
 
 
