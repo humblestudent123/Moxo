@@ -128,6 +128,9 @@
 </svg>
 
 
+
+
+<!-- кнопка смены темы -->
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
         id="bd-theme"
@@ -181,7 +184,7 @@
 
 
     <!-- замена фото логотипа -->
-    <img class="mb-4" src="../registration/images/moxo.png" alt="" width="100" height="100">
+    <img class="mb-4" src="../registration/images/moxo1.png" alt="" width="100" height="100">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
 
@@ -215,6 +218,85 @@
   </form>
 </main>
 <script defer src="../assets/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
+
+
+
+
+
+
+<script>
+  (() => {
+    // Получаем сохраненную тему из localStorage
+    const storedTheme = localStorage.getItem('theme');
+
+    // Функция для получения предпочтений темы
+    const getPreferredTheme = () => {
+      if (storedTheme) {
+        return storedTheme;
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    // Функция для установки темы
+    const setTheme = function (theme) {
+      if (theme === 'auto') {
+        document.documentElement.removeAttribute('data-bs-theme');
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+      }
+    };
+
+    // Устанавливаем тему при загрузке страницы
+    setTheme(getPreferredTheme());
+
+    // Обработчик смены темы при клике на кнопки
+    window.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtns = document.querySelectorAll('[data-bs-theme-value]');
+      
+      themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selectedTheme = btn.getAttribute('data-bs-theme-value');
+          localStorage.setItem('theme', selectedTheme);
+          setTheme(selectedTheme);
+
+          // Обновляем состояние кнопок
+          themeToggleBtns.forEach(el => {
+            el.classList.remove('active');
+            el.setAttribute('aria-pressed', 'false');
+          });
+
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+        });
+      });
+    });
+  })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </body>
 </html>

@@ -23,3 +23,20 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+
+
+
+
+/* Светлая тема */
+[data-bs-theme="light"] {
+  background-color: white;
+  color: black;
+}
+
+/* Темная тема */
+[data-bs-theme="dark"] {
+  background-color: black;
+  color: white;
+}
