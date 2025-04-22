@@ -130,7 +130,7 @@
 
 
 <!-- кнопка смены темы -->
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <!-- <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
         id="bd-theme"
         type="button"
@@ -165,7 +165,48 @@
   </li>
 </ul>
 
-    </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
 
     
 <main class="form-signin w-100 m-auto">
@@ -183,12 +224,19 @@
 
       
     <!-- замена фото логотипа -->
-    <img class="mb-4" src="../registration/images/moxo1.png" alt="" width="110" height="110">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <!-- <img class="mb-4" src="../registration/images/Logo_with_the_name_moxo_white_letters_and_black_stroke_of_letters-removebg-preview.png" alt="" width="110" height="110">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->
 
+    <div class="h1">
+      <h1>Moxo</h1>
+    </div>
 
-
-
+<style>
+  .h1{
+    text-align: center;
+    padding: 10px;
+  }
+</style>
 
 
 
@@ -330,7 +378,7 @@
 
 <!-- смена темы -->
 <button id="toggleTheme" class="btn btn-secondary position-fixed top-0 end-0 m-3">
-  <img src="images/night-mode.png" width="25px" height="25px"  alt="">
+  <img src="images/night-mode-removebg-preview.png" width="25px" height="25px"  alt="">
 </button>
     </body>
     <script>
@@ -342,7 +390,29 @@
         const newTheme = currentTheme === "dark" ? "light" : "dark";
         htmlElement.setAttribute("data-bs-theme", newTheme);
       });
-    </script>
+    </script> 
+
+
+
+<!-- плавное переключение -->
+<style>
+  body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .theme-dark {
+    background-color: #121212 !important;
+    color: #f1f1f1 !important;
+  }
+
+  .theme-light {
+    background-color: #ffffff !important;
+    color: #212529 !important;
+  }
+</style>
+
+
+
 
 
 
