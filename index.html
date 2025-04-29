@@ -263,7 +263,7 @@
     <button id="btn" class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
     <script>
       document.getElementById("btn").addEventListener("click", function() {
-        window.location.href = "nextpage.html"; // Укажи свой путь к странице
+        window.location.href = "home.html"; // Укажи свой путь к странице
       });
     </script>
 
@@ -376,21 +376,31 @@
 
 
 
-<!-- смена темы -->
-<button id="toggleTheme" class="btn btn-secondary position-fixed top-0 end-0 m-3">
-  <img src="images/night-mode-removebg-preview.png" width="25px" height="25px"  alt="">
+<!-- настройки -->
+<button onclick="myFunction()" id="toggleTheme" class="btn btn-light" type="button">
+  <img src="images/sett-removebg-preview.png" width="20px" height="20px" alt="">
 </button>
-    </body>
-    <script>
-      const toggleButton = document.getElementById("toggleTheme");
-      const htmlElement = document.documentElement;
-    
-      toggleButton.addEventListener("click", () => {
-        const currentTheme = htmlElement.getAttribute("data-bs-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        htmlElement.setAttribute("data-bs-theme", newTheme);
-      });
-    </script> 
+
+<script>
+  function myFunction() {
+    window.location.href = 'settings.html'; 
+  }
+</script>
+
+<style>
+  /* Позиционируем кнопку в правом нижнем углу */
+  #toggleTheme {
+    position: fixed; /* Фиксируем кнопку на экране */
+    bottom: 10px; /* Отступ от нижнего края */
+    right: 10px; /* Отступ от правого края */
+    z-index: 9999; /* Убедимся, что кнопка всегда сверху */
+  }
+</style>  
+
+   
+
+
+
 
 
 
@@ -436,8 +446,8 @@
 
 
 
-
-<style>
+<!-- checkbox togle white theme & black -->
+<style> 
   body {
     transition: background-color 0.3s, color 0.3s;
   }
@@ -445,9 +455,12 @@
 </head>
 <body class="p-5">
 
-<div class="form-check form-switch">
+<!-- <div class="form-check form-switch">
   <input class="form-check-input" type="checkbox" id="themeSwitch">
-</div>
+</div> -->
+
+
+
 
 
 <!-- Bootstrap JS -->
